@@ -2,7 +2,7 @@
 title: "SIEM'de Detection Engineering: Log Verisinden Anlamlı Alarmlara Giden Süreç"
 date: 2026-03-31
 tags: ["SIEM", "Detection", "SOC", "Güvenlik", "Engineering"]
-image: "https://cdn-images-1.medium.com/max/499/1*2P3DBExZQJo855RS1tZiqQ.png"
+image: "/images/post-siem-detection.png"
 summary: "Log verisinden anlamlı güvenlik alarmları nasıl üretilir? Detection engineering süreçlerini SIEM, EDR ve SOAR üzerinden inceledim."
 ---
 
@@ -16,7 +16,7 @@ Detection engineering, yalnızca loglardan alarm üretmek değildir. Asıl amaç
 
 Gerçek zorluk, milyonlarca "normal" davranış arasından anormal olanı yakalayabilmektir. Bu yazıda, bir log kaydının nasıl anlamlı bir güvenlik alarmına dönüştüğünü; SIEM, EDR ve SOAR ekosistemi üzerinden gerçek hayata yakın örneklerle inceleyeceğiz.
 
-![Detection Engineering](https://cdn-images-1.medium.com/max/499/1*2P3DBExZQJo855RS1tZiqQ.png)
+![Detection Engineering](/images/post-siem-detection.png)
 
 ### 1. Log Toplama ve Normalizasyon
 
@@ -96,7 +96,7 @@ Gerçek bir saldırı senaryosu genellikle tek bir olaydan değil, bir olay zinc
 4. Lateral movement başlar → Farklı sunuculara erişim
 5. SOAR otomatik müdahale eder → Hesap devre dışı, IP engeli
 
-![End-to-End Süreç](https://cdn-images-1.medium.com/max/392/1*1Ov-Uj0m2J1vSPxCfH7C2w.png)
+![End-to-End Süreç](/images/post-siem-detection.png)
 
 ### Sonuç
 

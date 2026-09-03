@@ -2,7 +2,7 @@
 title: "Flutter ile API Entegrasyonu: RESTful Servislerle Çalışmak"
 date: 2024-05-20
 tags: ["Flutter", "API", "REST", "Dart", "Mobil Geliştirme"]
-image: "https://cdn-images-1.medium.com/max/925/1*ayRzCl9_ZCdVX5BZk10Q8w.jpeg"
+image: "/images/post-flutter-api.jpeg"
 summary: "RESTful API'ler, web servisleriyle iletişim kurmak için yaygın olarak kullanılan bir yöntemdir. Flutter ile API entegrasyonunu nasıl yapacağınızı bu yazıda anlattım."
 ---
 
@@ -29,7 +29,7 @@ import 'package:http/http.dart' as http;
 
 http paketi, Flutter uygulamanızda RESTful API'lerle etkileşim kurmanın güçlü ve esnek bir yolunu sunar. GET ve POST istekleri yaparak verileri çekebilir ve gönderebilirsiniz.
 
-![HTTP Paketi](https://cdn-images-1.medium.com/max/1024/1*BvHEvnxeyYOExnpChgidUw.jpeg)
+![HTTP Paketi](/images/post-flutter-api.jpeg)
 
 ### 2. JSON Verilerini Çözme (Parsing)
 

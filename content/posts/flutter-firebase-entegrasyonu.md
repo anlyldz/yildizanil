@@ -2,7 +2,7 @@
 title: "Flutter-Firebase Entegrasyonu"
 date: 2024-05-07
 tags: ["Flutter", "Firebase", "Dart", "Mobil Geliştirme"]
-image: "https://cdn-images-1.medium.com/max/740/1*dIzCOdpCfA_psY7X3rPl-A.jpeg"
+image: "/images/post-flutter-firebase.jpeg"
 summary: "Flutter ile yazılmış bir uygulamanın Firebase'e nasıl bağlanıp entegre edileceğini anlattım."
 ---
 
@@ -16,7 +16,7 @@ Firebase Authentication, Flutter uygulamalarında kullanıcıların e-posta/şif
 
 [console.firebase.google.com](https://console.firebase.google.com/) adresi üzerinden siteye ulaştıktan sonra "Add project" butonuna basarak ilerleyin.
 
-![Firebase Proje Oluşturma](https://cdn-images-1.medium.com/max/1024/1*9DPma2vw6lGR_vF8F2Gc2g.png)
+![Firebase Proje Oluşturma](/images/post-flutter-firebase.jpeg)
 
 ### Adım 2: Kullanılacak Platformu Seçme
 
@@ -30,7 +30,7 @@ Burada farklı platformlar üzerinden işlemler yapılabilir:
 
 Flutter simgesine tıklayarak devam edin.
 
-![Platform Seçimi](https://cdn-images-1.medium.com/max/1024/1*08OhVBIZMk-9pDl2_vHPrw.png)
+![Platform Seçimi](/images/post-flutter-firebase.jpeg)
 
 Flutter'ı seçtikten sonra:
 
@@ -40,7 +40,7 @@ Flutter'ı seçtikten sonra:
 
 adımları uygulanmalıdır.
 
-![Flutter Kurulum](https://cdn-images-1.medium.com/max/1024/1*vVxbTRAY_iKMD7K_acNI_g.png)
+![Flutter Kurulum](/images/post-flutter-firebase.jpeg)
 
 ### Adım 3: Firebase CLI Kurulumu
 

@@ -2,7 +2,7 @@
 title: "Siber Güvenliğin Omurgası: SIEM ve Log Yönetiminin Temel Kavramları ve Kritik Rolü"
 date: 2026-02-02
 tags: ["SIEM", "Log Yönetimi", "Güvenlik", "SOC"]
-image: "https://cdn-images-1.medium.com/max/1024/1*pqqH-HiSd3Wm1BV9IDo2Vw.png"
+image: "/images/post-siem-log.png"
 summary: "SIEM ve log yönetimi arasındaki ilişkiyi, temel kavramları ve SOC yapıları için neden kritik olduğunu ele aldım."
 ---
 
@@ -13,7 +13,7 @@ Bu sorunun cevabı oldukça nettir: **loglar**.
 
 Log yönetimi, SIEM sistemlerinin temelini oluşturur. Log olmadan SIEM, güvenlik operasyonları için anlamlı bir çıktı üretemez. Bu yazıda, SIEM ile log yönetimi arasındaki ilişkiyi, temel kavramları ve neden SOC yapıları için kritik olduğunu ele alacağız.
 
-![SIEM ve Log Yönetimi](https://cdn-images-1.medium.com/max/1024/1*pqqH-HiSd3Wm1BV9IDo2Vw.png)
+![SIEM ve Log Yönetimi](/images/post-siem-log.png)
 
 ### Log Nedir?
 
@@ -43,7 +43,7 @@ Etkili bir log yönetimi genellikle aşağıdaki aşamalardan oluşur:
 - **Logların güvenli ve ölçeklenebilir şekilde saklanması:** Logların hem bütünlüğü korunmalı hem de yasal gereksinimlere uygun sürelerde saklanabilmelidir.
 - **Anlamlı olayların tespit edilmesi:** Büyük veri yığını içinden gerçekten önemli olan olayların ayıklanması.
 
-![Log Yönetimi Adımları](https://cdn-images-1.medium.com/max/722/1*UhY5V9OYyKyPuLHGcEM1dw.png)
+![Log Yönetimi Adımları](/images/post-siem-log.png)
 
 ### SIEM ve Log Yönetimi Arasındaki İlişki
 

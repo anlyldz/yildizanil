@@ -49,7 +49,4 @@ Cyber Security Engineer olarak çalışıyorum. Güvenlik operasyonları, SIEM �
 
 - 📍 Ankara, Türkiye
 - 📧 uaanlyldz@gmail.com
-- GitHub: [anlyldz](https://github.com/anlyldz)
 - LinkedIn: [anil-yildiz](https://linkedin.com/in/anil-yildiz-)
-- Twitter: [28_anlyldz](https://x.com/28_anlyldz)
-- Medium: [anlyldz0](https://medium.com/@anlyldz0)

@@ -42,10 +42,17 @@ title = "Anıl Yıldız"
   heroTitleLine2 = "Cyber Security Engineer"
   footerText = ""
 
+  [params.avatar]
+    assetPath = "images/avatar-astronaut.png"
+
+    [params.avatar.home]
+      assetPath = "images/avatar-astronaut.png"
+
+    [params.avatar.about]
+      assetPath = "images/avatar-astronaut.png"
+
   [params.social]
-    github = "https://github.com/anlyldz"
     linkedin = "https://linkedin.com/in/anil-yildiz-"
-    twitter = "28_anlyldz"
     email = "uaanlyldz@gmail.com"
 
   [params.buyMeACoffee]

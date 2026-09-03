@@ -2,7 +2,7 @@
 title: "SIEM'de Güvenlik Olayları Nasıl Tespit Edilir?"
 date: 2026-09-02
 tags: ["SIEM", "Güvenlik", "SOC", "Log Analizi"]
-image: "https://cdn-images-1.medium.com/max/581/0*LSYvir4jBmPpfzLz.png"
+image: "/images/post-siem-olay.jpg"
 summary: "SIEM sistemlerinde binlerce log arasından gerçek güvenlik olaylarını nasıl tespit edebileceğimizi, korelasyon ve detection mantığını inceledim."
 ---
 
@@ -20,7 +20,7 @@ SIEM; farklı kaynaklardan gelen verileri toplar, anlamlandırır, ilişkilendir
 
 Bu yazıda, bir log kaydının nasıl güvenlik olayına dönüştüğünü, korelasyon ve detection mantığının bu süreçteki rolünü ve farklı güvenlik ürünlerinden gelen verilerin nasıl birlikte değerlendirilebildiğini inceleyeceğiz.
 
-![SIEM](https://cdn-images-1.medium.com/max/581/0*LSYvir4jBmPpfzLz.png)
+![SIEM](/images/post-siem-olay.jpg)
 
 ### Her Log Bir Güvenlik Olayı Değildir
 
@@ -61,7 +61,7 @@ Bu sorgu, Windows Security loglarında başarısız login olaylarını kullanıc
 
 Örneğin sonuç şu şekilde olabilir:
 
-![Başarısız Login Sonuçları](https://cdn-images-1.medium.com/max/668/0*JyTy2zr_BAVFHLj6.png)
+![Başarısız Login Sonuçları](/images/post-siem-olay.jpg)
 
 Burada önemli olan nokta, 20 başarısız login görüldüğü için kesin olarak saldırı gerçekleştiğini söylememektir.
 
@@ -120,7 +120,7 @@ index=windows_index_isminiz (EventCode=4625 OR EventCode=4624)
 | where failed_logins >= 10 AND successful_logins >= 1
 ```
 
-![Korelasyon Sonucu](https://cdn-images-1.medium.com/max/666/0*-Wq2WVlwTe4qpbRC.png)
+![Korelasyon Sonucu](/images/post-siem-olay.jpg)
 
 Burada SIEM yalnızca "çok fazla başarısız login var" demiyor.
 
@@ -147,7 +147,7 @@ index=firewall_index_isminiz action=blocked
 | sort - count
 ```
 
-![Firewall Log Sonucu](https://cdn-images-1.medium.com/max/646/0*-h_XHD4idZ6yc-GK.png)
+![Firewall Log Sonucu](/images/post-siem-olay.jpg)
 
 Burada da dikkat etmemiz gereken şey tek bir firewall deny(red) logu güvenlik olayı olarak değerlendirilmez.
 
@@ -183,7 +183,7 @@ index=windows_index_isminiz EventCode=4688
 | sort - count
 ```
 
-![PowerShell Sonucu](https://cdn-images-1.medium.com/max/614/0*WeD75ZGYXTfS89Zp.png)
+![PowerShell Sonucu](/images/post-siem-olay.jpg)
 
 Burada yalnızca PowerShell çalıştırılmış olması saldırı anlamına gelmez.
 
@@ -206,4 +206,4 @@ Bunu gerçekleştirmek için bu parametreler çok önemlidir;
 
 **Doğru Veri, Doğru Detection, Doğru Korelasyon ve Doğru Analiz Yaklaşımı** bulunur.
 
-![Sonuç](https://cdn-images-1.medium.com/max/678/0*OSdkxG6q7K479h3K.png)
+![Sonuç](/images/post-siem-olay.jpg)

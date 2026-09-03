@@ -2,7 +2,7 @@
 title: "SIEM Nedir? SOC İçin Neden Hayati Öneme Sahiptir?"
 date: 2025-04-05
 tags: ["SIEM", "SOC", "Güvenlik", "Siber Güvenlik"]
-image: "https://cdn-images-1.medium.com/max/1024/1*1vMEklba13TvQCSKAerrIQ.png"
+image: "/images/post-siem-soc.png"
 summary: "SIEM'in ne olduğunu, sağladığı temel işlevleri ve SOC yapıları içinde neden hayati öneme sahip olduğunu anlattım."
 ---
 
@@ -10,7 +10,7 @@ Teknolojinin gelişimiyle birlikte kurumsal ağlar büyüyor, buna paralel olara
 
 Saldırganlar her geçen gün daha sofistike yöntemler kullanırken, sistemleri anlık olarak izleyip olaylara hızlı müdahale edebilmek her zamankinden daha önemli. İşte bu ihtiyaca yönelik geliştirilen sistemlerden biri de **SIEM** çözümleri. Bu yazıda, **SIEM'in ne olduğunu**, sağladığı temel işlevleri ve özellikle **SOC** yapıları içinde neden hayati öneme sahip olduğunu ele alacağım.
 
-![SIEM ve SOC](https://cdn-images-1.medium.com/max/1024/1*1vMEklba13TvQCSKAerrIQ.png)
+![SIEM ve SOC](/images/post-siem-soc.png)
 
 ### SOC nedir?
 
@@ -20,7 +20,7 @@ SOC, "Security Operations Center" kelimesinin kısaltması ve Türkçe'de "Güve
 
 SOC ekipleri, çeşitli güvenlik araçları kullanarak ağlar, sistemler ve veritabanları üzerinde oluşan tüm olayları takip eder. Bu araçlar genellikle **SIEM**, **IDS/IPS** (Intrusion Detection/Prevention Systems) ve **firewall** çözümleriyle entegre çalışır.
 
-![SOC Yapısı](https://cdn-images-1.medium.com/max/998/1*BwaFZaHbjNyGxChBEMjtEg.png)
+![SOC Yapısı](/images/post-siem-soc.png)
 
 ### SIEM nedir?
 
