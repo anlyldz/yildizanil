@@ -36,15 +36,15 @@ title = "Anıl Yıldız"
 [params]
   enableIntegrity = false
   relatedPostsCount = 3
-  description = "Anıl Yıldız'ın kişisel blogu"
+  description = "Cyber Security Engineer | SIEM & Threat Detection"
   author = "Anıl Yıldız"
   heroTitleLine1 = "ANIL YILDIZ"
-  heroTitleLine2 = "Kişisel Blog"
+  heroTitleLine2 = "Cyber Security Engineer"
   footerText = "Hugo ve Mana tema ile yapıldı"
 
   [params.social]
     github = "https://github.com/anlyldz"
-    email = "anil@example.com"
+    email = "uaanlyldz@gmail.com"
 
   [params.buyMeACoffee]
     enabled = false
