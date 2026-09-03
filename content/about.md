@@ -47,7 +47,9 @@ Cyber Security Engineer olarak çalışıyorum. Güvenlik operasyonları, SIEM �
 
 ## İletişim
 
-- 📍 Ankara, 06900, Türkiye
+- 📍 Ankara, Türkiye
 - 📧 uaanlyldz@gmail.com
-- 📞 (+90) 507 550 04 08
 - GitHub: [anlyldz](https://github.com/anlyldz)
+- LinkedIn: [anil-yildiz](https://linkedin.com/in/anil-yildiz-)
+- Twitter: [28_anlyldz](https://x.com/28_anlyldz)
+- Medium: [anlyldz0](https://medium.com/@anlyldz0)
