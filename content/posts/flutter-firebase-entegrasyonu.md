@@ -3,9 +3,8 @@ title: "Flutter-Firebase Entegrasyonu"
 date: 2024-05-07
 tags: ["Flutter", "Firebase", "Dart", "Mobil Geliştirme"]
 image: "https://cdn-images-1.medium.com/max/740/1*dIzCOdpCfA_psY7X3rPl-A.jpeg"
+summary: "Flutter ile yazılmış bir uygulamanın Firebase'e nasıl bağlanıp entegre edileceğini anlattım."
 ---
-
-![Flutter Firebase](https://cdn-images-1.medium.com/max/740/1*dIzCOdpCfA_psY7X3rPl-A.jpeg)
 
 Merhaba, bu yazımda Flutter ile yazılmış bir uygulamanın Firebase'e nasıl bağlanıp entegre edileceğini anlatacağım.
 

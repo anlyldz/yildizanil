@@ -3,6 +3,7 @@ title: "Siber Güvenliğin Omurgası: SIEM ve Log Yönetiminin Temel Kavramları
 date: 2026-02-02
 tags: ["SIEM", "Log Yönetimi", "Güvenlik", "SOC"]
 image: "https://cdn-images-1.medium.com/max/1024/1*pqqH-HiSd3Wm1BV9IDo2Vw.png"
+summary: "SIEM ve log yönetimi arasındaki ilişkiyi, temel kavramları ve SOC yapıları için neden kritik olduğunu ele aldım."
 ---
 
 Siber güvenlik ekosisteminde **SIEM** kavramı neredeyse her ortamda karşımıza çıkar. Ancak bu kavramın gerçekten ne ifade ettiğini kavrayabilmek için, doğru soruyu sorabilmemiz gerekir:

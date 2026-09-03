@@ -40,7 +40,7 @@ title = "Anıl Yıldız"
   author = "Anıl Yıldız"
   heroTitleLine1 = "ANIL YILDIZ"
   heroTitleLine2 = "Cyber Security Engineer"
-  footerText = "Hugo ve Mana tema ile yapıldı"
+  footerText = ""
 
   [params.social]
     github = "https://github.com/anlyldz"
@@ -57,6 +57,7 @@ title = "Anıl Yıldız"
 
   [params.copyright]
     startYear = 2026
+    endYear = 2026
     owner = "Anıl Yıldız"
 
   [params.admonitions]

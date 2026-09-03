@@ -3,9 +3,8 @@ title: "Flutter ile API Entegrasyonu: RESTful Servislerle Çalışmak"
 date: 2024-05-20
 tags: ["Flutter", "API", "REST", "Dart", "Mobil Geliştirme"]
 image: "https://cdn-images-1.medium.com/max/925/1*ayRzCl9_ZCdVX5BZk10Q8w.jpeg"
+summary: "RESTful API'ler, web servisleriyle iletişim kurmak için yaygın olarak kullanılan bir yöntemdir. Flutter ile API entegrasyonunu nasıl yapacağınızı bu yazıda anlattım."
 ---
-
-![Flutter API Entegrasyonu](https://cdn-images-1.medium.com/max/925/1*ayRzCl9_ZCdVX5BZk10Q8w.jpeg)
 
 RESTful API'ler, web servisleriyle iletişim kurmak için yaygın olarak kullanılan bir yöntemdir. Flutter, bu API'lerle etkileşim kurmak için güçlü ve esnek araçlar sunar. Bu blog yazımda, Flutter uygulamalarında RESTful API entegrasyonunu nasıl gerçekleştirebileceğimizi inceleyeceğiz.
 

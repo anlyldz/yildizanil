@@ -3,9 +3,8 @@ title: "Flutter Paketleri ve Eklentileri"
 date: 2024-05-13
 tags: ["Flutter", "Paketler", "Dart", "Mobil Geliştirme"]
 image: "https://cdn-images-1.medium.com/max/895/1*olW3QnjS1YQDr8VNoWMknQ.jpeg"
+summary: "Flutter geliştiricilerinin işini kolaylaştıran önemli paket ve eklentileri bu yazıda derledim."
 ---
-
-![Flutter Paketleri](https://cdn-images-1.medium.com/max/895/1*olW3QnjS1YQDr8VNoWMknQ.jpeg)
 
 Merhaba, bu yazımda Flutter geliştiricilerinin işini kolaylaştıran bazı önemli paketleri ve eklentileri ele alacağım.
 

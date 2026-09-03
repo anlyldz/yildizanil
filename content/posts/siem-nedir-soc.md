@@ -3,6 +3,7 @@ title: "SIEM Nedir? SOC İçin Neden Hayati Öneme Sahiptir?"
 date: 2025-04-05
 tags: ["SIEM", "SOC", "Güvenlik", "Siber Güvenlik"]
 image: "https://cdn-images-1.medium.com/max/1024/1*1vMEklba13TvQCSKAerrIQ.png"
+summary: "SIEM'in ne olduğunu, sağladığı temel işlevleri ve SOC yapıları içinde neden hayati öneme sahip olduğunu anlattım."
 ---
 
 Teknolojinin gelişimiyle birlikte kurumsal ağlar büyüyor, buna paralel olarak güvenlik tehditleri de daha karmaşık hale geliyor. Artık yalnızca büyük şirketler değil, küçük ve orta ölçekli işletmeler de hedef alınan saldırıların etkisini ciddi şekilde hissediyor. Kurumlar yalnızca dış saldırganlara karşı değil, içeriden gelen tehditlere karşı da tetikte olmak zorunda.

@@ -3,6 +3,7 @@ title: "SIEM'de Detection Engineering: Log Verisinden Anlamlı Alarmlara Giden S
 date: 2026-03-31
 tags: ["SIEM", "Detection", "SOC", "Güvenlik", "Engineering"]
 image: "https://cdn-images-1.medium.com/max/499/1*2P3DBExZQJo855RS1tZiqQ.png"
+summary: "Log verisinden anlamlı güvenlik alarmları nasıl üretilir? Detection engineering süreçlerini SIEM, EDR ve SOAR üzerinden inceledim."
 ---
 
 Günümüz siber güvenlik operasyonlarında, tek başına log verisi, anlamlı bir güvenlik aksiyonu üretmek için yeterli değildir. Kurumlar her gün milyonlarca log üretirken, bu verilerin içerisinden gerçek tehditleri ayıklamak kritik bir mühendislik problemine dönüşmüştür.

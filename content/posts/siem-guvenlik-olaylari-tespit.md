@@ -3,6 +3,7 @@ title: "SIEM'de Güvenlik Olayları Nasıl Tespit Edilir?"
 date: 2026-09-02
 tags: ["SIEM", "Güvenlik", "SOC", "Log Analizi"]
 image: "https://cdn-images-1.medium.com/max/581/0*LSYvir4jBmPpfzLz.png"
+summary: "SIEM sistemlerinde binlerce log arasından gerçek güvenlik olaylarını nasıl tespit edebileceğimizi, korelasyon ve detection mantığını inceledim."
 ---
 
 Önceki yazılarımda SIEM'in ne olduğunu, SOC yapılarındaki önemini ve SIEM sistemlerinin beslendiği temel veri kaynağı olan log yönetimini ele aldık.
