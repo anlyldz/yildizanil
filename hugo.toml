@@ -63,8 +63,6 @@ title = "Anıl Yıldız"
     lightTheme = "catppuccin-frappe"
 
   [params.copyright]
-    startYear = 2026
-    endYear = 2026
     owner = "Anıl Yıldız"
 
   [params.admonitions]
