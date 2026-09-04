@@ -553,11 +553,11 @@
 }
 .post-share-btn:hover {
   color: #fff;
+  background: var(--accent-primary);
 }
-.post-share-btn:nth-of-type(1):hover { background: #000; }
-.post-share-btn:nth-of-type(2):hover { background: #0a66c2; }
-.post-share-btn:nth-of-type(3):hover { background: #1877f2; }
-.post-share-btn:nth-of-type(4):hover { background: #25d366; }
+.post-share-btn[title="X"]:hover { background: #000; }
+.post-share-btn[title="LinkedIn"]:hover { background: #0a66c2; }
+.post-share-btn[title="Facebook"]:hover { background: #1877f2; }
 .post-share-copied {
   font-size: 0.8125rem;
   color: var(--accent-primary);
