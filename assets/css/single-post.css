@@ -557,7 +557,6 @@
 }
 .post-share-btn[title="X"]:hover { background: #000; }
 .post-share-btn[title="LinkedIn"]:hover { background: #0a66c2; }
-.post-share-btn[title="Facebook"]:hover { background: #1877f2; }
 .post-share-copied {
   font-size: 0.8125rem;
   color: var(--accent-primary);
