@@ -5,7 +5,7 @@ layout: "about"
 
 Merhaba! Ben Anıl Yıldız.
 
-Cyber Security Engineer olarak çalışıyorum. Güvenlik operasyonları, SIEM çözümleri ve tehdit tespiti konularında uzmanlaşmış biriyim.
+Cyber Security Engineer olarak çalışıyorum. Güvenlik operasyonları, SIEM çözümleri ve tehdit tespiti konularında uzmanlaşmaktayım.
 
 ## İş Deneyimim
 
@@ -43,7 +43,7 @@ Cyber Security Engineer olarak çalışıyorum. Güvenlik operasyonları, SIEM �
 - **Güvenlik:** SIEM, Logging & Monitoring, Splunk, Threat Detection, Incident Response
 - **Araçlar:** Microsoft Office, QlikView & QlikSense, Tableau, PowerBI, SQL, Figma, Git
 - **Programlama:** Python (Temel), Dart, Flutter
-- **Diller:** İngilizce, Türkçe
+- **Diller:** İngilizce
 
 ## İletişim
 
