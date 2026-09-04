@@ -195,8 +195,6 @@ index=edr_index_isminiz
 | sort - count
 ```
 
-![EDR Tehdit Tespiti](/images/post-siem-detection.png)
-
 Burada birincil amaç EDR'ın yaptığı tespitleri tekrar yapmak değil, EDR'dan gelen bilgileri SIEM'in diğer veri kaynaklarıyla birlikte değerlendirebilmektir.
 
 Örneğin Trend Micro, Microsoft Defender, CrowdStrike, Carbon Black veya farklı EDR/XDR çözümlerinden gelen bir endpoint uyarısı, SIEM içerisinde kullanıcı, IP, hostname veya zaman bilgileri üzerinden diğer olaylarla ilişkilendirilebilir.
