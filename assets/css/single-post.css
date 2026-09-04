@@ -513,3 +513,55 @@
   border-radius: 0.5rem;
   object-fit: contain;
 }
+
+/* --- Override: Paylaş butonları (Medium tarzı) --- */
+.post-share {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+.post-share-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-inline-end: 0.25rem;
+}
+.post-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+}
+.post-share-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.post-share-btn:hover {
+  transform: translateY(-2px);
+}
+.post-share-btn:hover {
+  color: #fff;
+}
+.post-share-btn:nth-of-type(1):hover { background: #000; }
+.post-share-btn:nth-of-type(2):hover { background: #0a66c2; }
+.post-share-btn:nth-of-type(3):hover { background: #1877f2; }
+.post-share-btn:nth-of-type(4):hover { background: #25d366; }
+.post-share-copied {
+  font-size: 0.8125rem;
+  color: var(--accent-primary);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.post-share-copied.visible { opacity: 1; }
