@@ -55,7 +55,7 @@ Ancak:
 
 Bu mantığı Splunk üzerinde basit bir sorguyla örnekleyebiliriz.
 
-```spl
+```
 index=windows_index_isminiz EventCode=4625
 | bin _time span=2m
 | stats count as failed_attempts by _time, user, src_ip
@@ -117,7 +117,7 @@ Bu iki davranışı birlikte incelemek, yalnızca başarısız loginleri saymakt
 
 Örneğin:
 
-```spl
+```
 index=windows_index_isminiz (EventCode=4625 OR EventCode=4624)
 | stats 
     count(eval(EventCode=4625)) as failed_logins
@@ -150,7 +150,7 @@ Firewall'lar Source(Kaynak) IP, Destination(Hedef) IP, Port, Protokol, Policy ve
 
 Basit bir SPL örneği:
 
-```spl
+```
 index=firewall_index_isminiz action=blocked
 | stats count by src_ip, dest_port
 | where count >= 100
@@ -188,7 +188,7 @@ gibi aktiviteler EDR tarafından tespit edilebilir.
 
 Örneğin Splunk'a EDR loglarının aktarıldığını varsayarsak, yüksek önem seviyesine sahip olayları basit bir sorguyla inceleyebiliriz:
 
-```spl
+```
 index=edr_index_isminiz
 | search action="blocked" OR severity="high"
 | stats count by host, user, process_name, severity
@@ -213,7 +213,7 @@ Ancak PowerShell'in nasıl ve hangi süreç tarafından çalıştırıldığı �
 
 Örneğin:
 
-```spl
+```
 index=windows_index_isminiz EventCode=4688
 | search process_name="*powershell.exe*"
 | stats count by host, user, parent_process, command_line
@@ -296,5 +296,3 @@ Ancak bu olaylar aynı kullanıcı, endpoint, IP adresi veya zaman aralığı ü
 Bu nedenle başarılı bir SIEM yapısının temelinde yalnızca güçlü bir ürün değil;
 
 **Doğru Veri, Doğru Detection, Doğru Korelasyon ve Doğru Analiz Yaklaşımı** bulunur.
-
-![Sonuç](/images/post-siem-soc.png)
