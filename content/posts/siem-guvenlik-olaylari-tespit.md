@@ -34,6 +34,12 @@ SIEM'e gönderilen her logun bir saldırı anlamına gelmediğini tekrar belirtm
 - Bir kullanıcının bir dosyaya erişmesi
 - EDR'nin bir endpoint üzerinde şüpheli bir process tespit etmesi
 - Trend Micro'nun zararlı bir dosyayı engellemesi
+- EDR'nin bir process'in ağ bağlantısı kurduğunu kaydetmesi
+- Trend Micro'nun bir endpoint üzerinde malware tespit etmesi
+- EDR'nin bir kullanıcının USB cihaz bağladığını kaydetmesi
+- Trend Micro'nun şüpheli bir URL erişimini engellemesi
+- EDR'nin bir dosyanın oluşturulduğunu veya silindiğini kaydetmesi
+- Trend Micro'nun bir endpoint üzerinde güvenlik politikası ihlali tespit etmesi
 
 tek başına bakıldığında herhangi bir saldırı belirtisi olmayabilir.
 
@@ -61,7 +67,7 @@ Bu sorgu, Windows Security loglarında başarısız login olaylarını kullanıc
 
 Örneğin sonuç şu şekilde olabilir:
 
-![Başarısız Login Sonuçları](/images/post-siem-olay.jpg)
+![Başarısız Login Sonuçları](/images/post-siem-login-bruteforce.png)
 
 Burada önemli olan nokta, 20 başarısız login görüldüğü için kesin olarak saldırı gerçekleştiğini söylememektir.
 
@@ -120,7 +126,7 @@ index=windows_index_isminiz (EventCode=4625 OR EventCode=4624)
 | where failed_logins >= 10 AND successful_logins >= 1
 ```
 
-![Korelasyon Sonucu](/images/post-siem-olay.jpg)
+![Korelasyon Sonucu](/images/post-siem-korelasyon.png)
 
 Burada SIEM yalnızca "çok fazla başarısız login var" demiyor.
 
@@ -129,6 +135,10 @@ Aynı zamanda:
 **Başarısız loginler → Başarılı login**
 
 ilişkisini ortaya çıkarıyor.
+
+Bu ilişki, çok sayıda başarısız giriş denemesinin ardından gerçekleşen başarılı girişin, olası bir brute force saldırısının başarıya ulaşmış olabileceğine dair daha güçlü bir güvenlik göstergesi olarak değerlendirilmesini sağlar.
+
+**Not:** Görsellerde kullanılan IP'ler herhangi bir kurum ya da kuruluşa ait değildir, bilgi güvenliğine örnek olması açısından karalanmıştır!
 
 ### Firewall Logları ile Ağ Davranışlarının Tespiti
 
@@ -147,17 +157,34 @@ index=firewall_index_isminiz action=blocked
 | sort - count
 ```
 
-![Firewall Log Sonucu](/images/post-siem-olay.jpg)
+![Firewall Log Sonucu](/images/post-siem-firewall-scan.png)
 
-Burada da dikkat etmemiz gereken şey tek bir firewall deny(red) logu güvenlik olayı olarak değerlendirilmez.
+Burada da dikkat etmemiz ve geniş perspektiften bakmamız gereken şey tek bir firewall deny(red) logu güvenlik olayı olarak değerlendirilmez.
 
 Ancak aynı kaynaktan çok sayıda bağlantı denemesi gelmesi, hedef portların çeşitlenmesi veya farklı sistemlere yönelik benzer aktivitelerin görülmesi olayın gidişatını değiştirebilir.
+
+Bu nedenle firewall loglarının SIEM içerisinde diğer veri kaynaklarıyla entegre şekilde değerlendirilmesi ve düşünülmesi önemlidir.
 
 ### Endpoint ve EDR Verileri ile Tehdit Tespiti
 
 Öncelikle EDR temel olarak endpoint üzerinde gerçekleşen aktiviteleri izlemeye ve endpoint seviyesinde tehditleri tespit etmeye odaklanırken, SIEM farklı güvenlik ürünlerinden ve sistemlerden gelen verileri merkezi olarak bir araya getirerek daha geniş bir görünürlük ve korelasyon imkânı sağlar.
 
 Modern SOC ortamlarında SIEM yalnızca firewall veya işletim sistemi loglarından beslenmez.
+
+Örneğin Endpoint Detection and Response (EDR) çözümleri de SIEM için oldukça önemli veri kaynaklarıdır.
+
+EDR, Firewall ve SIEM ürünleri birbirine iyi entegre edilmiş kullanıldığı taktirde EDR sistemleri endpoint üzerinde gerçekleşen aktiviteleri daha detaylı şekilde gözlemleyebilir.
+
+Örneğin;
+
+- Process oluşturulması
+- Şüpheli komut çalıştırılması
+- Dosya aktiviteleri
+- Registry değişiklikleri
+- Zararlı yazılım tespitleri
+- Şüpheli network bağlantıları
+
+gibi aktiviteler EDR tarafından tespit edilebilir.
 
 Örneğin Splunk'a EDR loglarının aktarıldığını varsayarsak, yüksek önem seviyesine sahip olayları basit bir sorguyla inceleyebiliriz:
 
@@ -168,11 +195,21 @@ index=edr_index_isminiz
 | sort - count
 ```
 
+![EDR Tehdit Tespiti](/images/post-siem-detection.png)
+
+Burada birincil amaç EDR'ın yaptığı tespitleri tekrar yapmak değil, EDR'dan gelen bilgileri SIEM'in diğer veri kaynaklarıyla birlikte değerlendirebilmektir.
+
+Örneğin Trend Micro, Microsoft Defender, CrowdStrike, Carbon Black veya farklı EDR/XDR çözümlerinden gelen bir endpoint uyarısı, SIEM içerisinde kullanıcı, IP, hostname veya zaman bilgileri üzerinden diğer olaylarla ilişkilendirilebilir.
+
+Böylece farklı güvenlik ürünleri birbirinden bağımsız çalışan sistemler olmaktan çıkarak daha geniş bir güvenlik görünürlüğünün parçaları haline gelir ve çözüme ulaşmak için birbirini tamamlar.
+
 ### Şüpheli PowerShell Aktivitesinin Tespiti
 
 Farklı bir örnek olarak **Endpoint loglarının** değerini göstermek için PowerShell üzerinden de basit bir örnek verebiliriz.
 
-Windows ortamında PowerShell kullanılması tek başına zararlı değildir. Ancak PowerShell'in nasıl ve hangi süreç tarafından çalıştırıldığı önemli bir bağlam sağlayabilir.
+Windows ortamında PowerShell kullanılması tek başına zararlı değildir. Sistem yöneticileri ve uygulamalar tarafından günlük operasyonlarda kullanılabilir. Bunların gerekli prosedür ve görev dağılımlarıyla düzenlenmesi şarttır.
+
+Ancak PowerShell'in nasıl ve hangi süreç tarafından çalıştırıldığı önemli bir bağlam sağlayabilir.
 
 Örneğin:
 
@@ -183,11 +220,53 @@ index=windows_index_isminiz EventCode=4688
 | sort - count
 ```
 
-![PowerShell Sonucu](/images/post-siem-olay.jpg)
+![PowerShell Sonucu](/images/post-siem-powershell.png)
 
 Burada yalnızca PowerShell çalıştırılmış olması saldırı anlamına gelmez.
 
 Fakat PowerShell'in bir Office uygulaması tarafından başlatılması, encoded command kullanılması veya aynı endpoint üzerinde EDR tarafından şüpheli bir davranış tespit edilmesi gibi ek göstergeler olayın risk seviyesini değiştirebilir.
+
+İşte burada context, yani olayın bağlamı önem kazanır.
+
+### Splunk, Elastic ve Diğer SIEM Platformlarında Detection Mantığı
+
+Konunun bir diğer başlığı farklı SIEM ürünlerinin mimarileri ve kullandıkları teknolojiler birbirinden farklı olabilir.
+
+Splunk Enterprise Security, Elastic Security ve diğer SIEM çözümleri farklı sorgulama ve detection mekanizmalarına sahip olabilir.
+
+Örneğin Splunk tarafında SPL kullanılarak belirli davranışlar aranabilir ve belirlenen koşullar gerçekleştiğinde detection veya alert oluşturulabilir.
+
+Elastic tarafında ise Elasticsearch üzerinde tutulan veriler Elastic Security'nin detection mekanizmaları üzerinden değerlendirilebilir.
+
+Ancak kullanılan ürün ne olursa olsun temel yaklaşım ve algoritma büyük ölçüde benzerdir:
+
+**Veriyi topla → Veriyi anlamlandır → Davranışı analiz et → Şüpheli durumu tespit et → Alarm üret**
+
+Bu nedenle başarılı bir detection tasarımında kullanılan SIEM ürününden daha önemli olan nokta, hangi davranışın tespit edilmek istendiğinin doğru tanımlanmasıdır. Bu ayrımı yapmak çok kritiktir.
+
+### Alarm Üretmek Saldırıyı Tespit Etmek Anlamına Gelmez
+
+SIEM sistemlerinde en sık karşılaşılan problemlerden biri de burada ortaya çıkar.
+
+Bir detection kuralının çalışması, saldırının kesin olarak gerçekleştiği anlamına gelmez.
+
+Örneğin bir sistemde 20 başarısız login görülmesi gerçekten brute force olabilir.
+
+Ancak aynı davranış;
+
+- Kullanıcının şifresini unutması
+- Yanlış yapılandırılmış bir servis
+- Otomasyon sistemi
+
+nedeniyle de gerçekleşebilir.
+
+Bu nedenle SIEM tarafından üretilen alarmın SOC analisti tarafından incelenmesi gerekir.
+
+Burada False Positive kavramı ortaya çıkar.
+
+İyi bir SIEM ortamının amacı mümkün olduğunca fazla alarm üretmek değil, doğru ve anlamlı alarm üretmektir.
+
+![Alarm ve False Positive](/images/post-siem-alarm-fp.png)
 
 ### Sonuç
 
@@ -204,6 +283,18 @@ Bunu gerçekleştirmek için bu parametreler çok önemlidir;
 - False positive oranlarının azaltılması
 - SOC analistlerinin olayları bağlam içerisinde değerlendirmesi
 
+gerekir.
+
+Bir Firewall logu tek başına yalnızca bir bağlantıyı gösterebilir.
+
+Bir Windows Logu tek başına yalnızca bir login olayını gösterebilir.
+
+Bir EDR uyarısı tek başına yalnızca şüpheli bir process'i gösterebilir.
+
+Ancak bu olaylar aynı kullanıcı, endpoint, IP adresi veya zaman aralığı üzerinden ilişkilendirildiğinde SIEM, dağınık olayları anlamlı bir güvenlik hikâyesine dönüştürebilir.
+
+Bu nedenle başarılı bir SIEM yapısının temelinde yalnızca güçlü bir ürün değil;
+
 **Doğru Veri, Doğru Detection, Doğru Korelasyon ve Doğru Analiz Yaklaşımı** bulunur.
 
-![Sonuç](/images/post-siem-olay.jpg)
+![Sonuç](/images/post-siem-soc.png)
